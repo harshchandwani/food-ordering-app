@@ -1,7 +1,7 @@
 import { CDN_URL } from "../utils/constant";
  export const RestaurantCard = (props) => {
-    const {resObj} = props;
-    const {name, cuisine, rating, cloudnaryimageId} = resObj?.restaurant;
+    const {resData} = props;
+    const {name, cuisine, rating, cloudnaryimageId} = resData?.restaurant;
     return (
         
         <div className = "res-card" style={{backgroundColor: "#f0f0f0"}}>

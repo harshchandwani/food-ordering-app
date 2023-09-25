@@ -14,9 +14,29 @@ We have divided the web app into 3 parts
   - Search
   - Restaurant Container
     - Restaurant Card
+      - Image
+      - Name of restaurant, star rating, cuisine, delivery time
 
 - Footer
   - Copyright
   - Links
   - Address
   - Contact
+
+
+
+There are 2 Types of Import/Export
+
+- Default Import/Export (if there is one component, strictly use this)
+
+ export default <name of component>
+ import <name of component > from path
+
+- Named Import/Export
+
+  export const Component = () => {
+    .....
+  }
+  import { Component } from path
+
+  

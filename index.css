@@ -17,3 +17,27 @@
     padding: 10px;
     margin: 10px;
 }
+.res-card:hover{
+    padding: 5px;
+    width: 200px;
+    height: 300px;
+}
+.res-card {
+    margin: 5px;
+    width: 200px;
+    
+    padding: 5px;
+}
+.information-restaurant{
+    padding: 5px;
+}
+.search{
+    padding: 10px;
+}
+.res-logo{
+    width:100%;
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}

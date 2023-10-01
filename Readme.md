@@ -40,3 +40,8 @@ There are 2 Types of Import/Export
   import { Component } from path
 
   
+
+  # React Hooks
+  (Normal JS Utility functions)
+  - useState()
+  - useEffect()

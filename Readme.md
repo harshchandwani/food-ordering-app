@@ -56,3 +56,6 @@ setOrigionalState(changes in data);
 
 WHENEVER A STATE VARIABLE CHANGE, REACT WILL RE-RENDER
 
+What is reconciliation?
+
+The algorithm React uses to diff one tree with another to determine which parts need to be changed.

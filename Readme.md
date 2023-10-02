@@ -43,5 +43,16 @@ There are 2 Types of Import/Export
 
   # React Hooks
   (Normal JS Utility functions)
-  - useState()
+  - useState() - Superpowerful React variables  [Import as Named import ]
   - useEffect()
+
+
+
+# Use State
+
+const [origionalState, setOrigionalState] = useState(origional data);
+
+setOrigionalState(changes in data);
+
+WHENEVER A STATE VARIABLE CHANGE, REACT WILL RE-RENDER
+

@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
-// import resList from "../utils/mockData";
+
 
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -51,7 +51,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
-              (res) => res.data.avgRating > 4
+              (res) => res.info.avgRating > 4
             );
             setListOfRestraunt(filteredList);
           }}

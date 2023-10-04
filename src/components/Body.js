@@ -1,10 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
-
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([])
   useEffect(() => {
     
     fetchData();
@@ -28,33 +29,24 @@ const Body = () => {
         const resData =
         cardObj.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setListOfRestraunt(resData);
-        // setFilteredRestaurant(resData);
+        setFilteredRestaurant(resData);
       }
     }
   };
   
-  
-  
-  // const fetchData = async () => {
-  //   const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.001213&lng=75.9608385&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-   
-  //   const json = await data.json();
-  //   console.log(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
-  //   setListOfRestraunt(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-  //   //can we call this swiggy api?
-    
-  // }
+  const handleFilterClick = () => {
+    const filteredList = listOfRestaurants.filter((res) => res.info.avgRating > 4);
+    setFilteredRestaurant(filteredList);
+  };
+  if(listOfRestaurants.length === 0){
+    return <Shimmer />
+  }
   return (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4
-            );
-            setListOfRestraunt(filteredList);
-          }}
+          onClick={handleFilterClick}
         >
           Top Rated Restaurants
         </button>

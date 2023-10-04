@@ -20,13 +20,13 @@
 .res-card:hover{
     padding: 5px;
     width: 200px;
-    height: 300px;
+    height: 400px;
 }
 .res-card {
     margin: 5px;
     width: 200px;
-    
     padding: 5px;
+    height: 400px;
 }
 .information-restaurant{
     padding: 5px;
@@ -46,4 +46,16 @@
 .filter-btn{
     margin:10px;
     cursor: pointer;
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+    margin: 5px;
+    width: 200px;
+    height: 400px;
+    padding: 5px;
+    background-color: #f0f0f0;
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Shimmer() {
+const Shimmer = () => {
   return (
     <div className='shimmer-container'>
         <h1 className='shimmer-card'></h1>

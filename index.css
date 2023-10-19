@@ -16,6 +16,7 @@
 .nav-items > ul > li {
     padding: 10px;
     margin: 10px;
+    text-decoration: none;
 }
 .res-card:hover{
     padding: 5px;

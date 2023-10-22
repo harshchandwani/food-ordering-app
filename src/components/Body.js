@@ -53,8 +53,9 @@ const Body = () => {
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input 
-            type="text" 
+          <input
+            id="search"
+            type="search" 
             className="search-box" 
             value={searchText}
             onChange={(event) => setSearchText(event.target.value)}
@@ -63,13 +64,13 @@ const Body = () => {
           <button 
             className="search-btn"
             onClick={handleSearch}
-            >Search</button>
+            >Go</button>
         </div>
-        <button
+        {/* <button
           className="filter-btn"
         >
           Top Rated Restaurants
-        </button>
+        </button> */}
       </div>
       <div className="res-container">
         

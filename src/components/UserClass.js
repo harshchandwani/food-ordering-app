@@ -4,7 +4,7 @@ class UserClass extends React.Component {
 
     constructor(props){
         super(props);
-        // console.log(props);
+        console.log("This is a Constructor of Child");
         this.state = {
             count: 0
         }
@@ -13,7 +13,12 @@ class UserClass extends React.Component {
     incrementCount = () => {
         this.setState({count: this.state.count + 2});
     }
+
+    componentDidMount(){
+        console.log("Child Component did mount of Child");
+    }
     render(){
+        console.log("Render of Child component");
         return (
             <div className="user-card">
                 <h1>Name: {this.props.name}</h1>

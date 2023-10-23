@@ -67,3 +67,10 @@ The algorithm React uses to diff one tree with another to determine which parts 
 
 1. Client Side Routing:  Whenever we make a call, there is no network calls
 2.  Server Side Routing: Whenever we make a network call and the page comes from server
+
+
+
+# Order of LifeCycle
+
+
+Con

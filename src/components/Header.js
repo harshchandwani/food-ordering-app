@@ -18,7 +18,7 @@ const Header = () => {
 
 
     useEffect(() => {
-        console.log("Effect called")
+        // console.log("Effect called")
     });
 
     //it will be called, when component is rendered  

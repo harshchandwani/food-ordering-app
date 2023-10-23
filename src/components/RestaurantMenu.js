@@ -63,9 +63,9 @@ const RestaurantMenu = () => {
                                 <p>{item.card.info.price / 100}</p>
                                 </div>
     
-                            </div>
-                                <button class="btn">Add to Card<i class="fa fa-arrow-right"></i></button>
-                            </div>
+                                </div>
+                                    <button class="btn">Add to Card<i class="fa fa-arrow-right"></i></button>
+                                </div>
                             </div>
 
 

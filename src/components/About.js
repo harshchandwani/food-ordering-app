@@ -7,14 +7,14 @@ class About extends React.Component{
 
     constructor(){
         super();
-        console.log("This is a Parent Constructor");
+        // console.log("This is a Parent Constructor");
     }
 
     componentDidMount(){
-        console.log("This is a Component did Mount of Parent");
+        // console.log("This is a Component did Mount of Parent");
     }
     render(){
-        console.log("This is Parent Render");
+        // console.log("This is Parent Render");/
         return (
             <div>
                 <h1>This is an About page</h1>

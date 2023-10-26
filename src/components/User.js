@@ -30,7 +30,7 @@ const User = (props) => {
                 <h1>Name: {name}</h1>
                 {/* <h3>Count: {}</h3> */}
                 <h2>Location: {location}</h2>
-                <h2>Twitter: {twitter_usernamez}</h2>
+                <h2>Twitter: {twitter_username}</h2>
                 <button onClick={() => {setCount(count + 1)}}>Increase</button>
             </div>
         )

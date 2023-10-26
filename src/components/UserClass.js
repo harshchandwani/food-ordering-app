@@ -14,7 +14,7 @@ class UserClass extends React.Component {
     }
 
     incrementCount = () => {
-        this.setState({count: this.state.count + 2});
+        this.setState({ count: this.state.count + 2 });
     }
 
     async componentDidMount(){
@@ -28,7 +28,7 @@ class UserClass extends React.Component {
         // console.log("Child Component did mount of Child");
     }
     render(){
-        const {name, location, blog} = this.state.userInfo;
+        const { name, location, blog } = this.state.userInfo;
         // console.log("Render of Child component");
         return (
             <div className="user-card">

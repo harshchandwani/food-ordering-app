@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -20,7 +21,7 @@ const Body = () => {
   
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.9006311&lng=75.923534&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.694490&lng=76.665092&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -36,7 +37,10 @@ const Body = () => {
       }
     }
   };
-
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus === false){
+    return <h1>Looks like you are not connected to the world, Please check your internet connection</h1>
+  }
   //conditional Rendering  
   if(listOfRestaurants.length === 0){
     return <Shimmer />
@@ -66,11 +70,6 @@ const Body = () => {
             onClick={handleSearch}
             >Go</button>
         </div>
-        {/* <button
-          className="filter-btn"
-        >
-          Top Rated Restaurants
-        </button> */}
       </div>
       <div className="res-container">
         

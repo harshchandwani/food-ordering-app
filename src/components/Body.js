@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -9,6 +9,8 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -25,7 +27,7 @@ const Body = () => {
     const json = await data.json();
     const arrayOfCards = json.data.cards;
     const restaurant_list = "restaurant_grid_listing";
-
+      
     for (const cardObj of arrayOfCards) {
       if (cardObj.card.card && cardObj.card.card.id === restaurant_list) {
         const resData =
@@ -70,7 +72,7 @@ const Body = () => {
             className="px-4 py-2 border rounded-lg"
             onClick={() => {
               const filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4
+                (res) => res.info.avgRating > 3.9
               );
               setFilteredRestaurants(filteredList);
             }}
@@ -86,6 +88,13 @@ const Body = () => {
           <Link key={restaurant?.info?.id}
             to={"/restaurants/" + restaurant?.info.id}
           >
+            {/* if the restaurant is promoted then add a promoted label to it 
+              restaurant.data.promoted ? (
+              <RestaurantCardPromoted resData={restaurant} /> 
+              ) : (
+              <RestaurantCard resData={restaurant} />
+              )
+              */}
             <RestaurantCard resData={restaurant} />
           </Link>
         ))}

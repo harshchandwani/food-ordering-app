@@ -9,7 +9,6 @@ const RestaurantCard = (props) => {
     avgRating,
     cuisines,
     costForTwo,
-    deliveryTime,
   } = resData?.info;
 
   return (
@@ -28,5 +27,24 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
+
+
+//Higher Order Component 
+//take component (Restaurant Card)
+//enhance it 
+//return modiffy component (Promoted Restaurant Card)
+//input - Restaurant ===>>> RestaurantCardPromoted
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label>Promoted</label>
+        <RestaurantCard {...props}/>
+      </div>
+    )
+  }
+};
+//this is a higher order component
 
 export default RestaurantCard;

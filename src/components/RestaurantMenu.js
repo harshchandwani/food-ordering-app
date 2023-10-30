@@ -28,45 +28,45 @@ const RestaurantMenu = () => {
         return <Shimmer />
     }
     else {
+        
         const { name, cuisines, costForTwoMessage } = resInfo?.cards[0]?.card?.card?.info;
-        const itemCards = resInfo?.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards;
-        return (
+        
+        const { itemCards } = resinfo?.cards[2]?.groupedCard?.REGULAR?.cards[1]?.card?.card;
 
+        const categories = resInfo?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+            (c) => 
+                c.card?.["card"]?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+        )
+            console.log(categories);
+        return (
             <div className="menu">
-                <h1>{name}</h1>
-                <p>
+                <h1 className="m-7 text-4xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">{name}</h1>
+                <p className="mx-7 my-4 text-xl">
                     {cuisines.join(", ")} - {costForTwoMessage}
                 </p>
-                <h2>Menu</h2>
+                <h2 className="mx-7 my-4 text-lg font-semibold">Today's Special Menu</h2>
 
 
-                <ul className="listOfFood">
+                <ul className="listOfFood flex-wrap flex">
                     {itemCards.map(item =>
                         <li key={item.card.info.id} className="foodItem">
 
-                            <div className="container">
+                            <div className="m-4 p-4 w-[250px] rounded-lg bg-slate-100">
                                 <img
+                                    className="rounded-lg"
                                     src={CDN_URL + item.card.info.imageId}
-                                    alt="Pancake"
+                                    alt= {item.card.info.name}
                                 />
-                                <div className="container__text">
-                                    <h1>{item.card.info.name}</h1>
-                                    <div className="container__text__star">
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                    </div>
-                                    <p>{item.card.info.description}</p>
-                                    <div className="container__text__timing">
-                                        <div className="container__text__timing_time">
-                                            <h2>Price</h2>
-                                            <p>{item.card.info.price / 100}</p>
+                                <div className="">
+                                    <h1 className="font-bold py-4">{item.card.info.name}</h1>
+                                    <p className="py-3">{item.card.info.description}</p>
+                                    <div className="">
+                                        <div className="">
+                                            <p>{item.card.info.price / 100} Rs. Only</p>
                                         </div>
 
                                     </div>
-                                    <button className="btn">Add to Card<i className="fa fa-arrow-right"></i></button>
+                                    <button className="search-btn bg-red-400 rounded-lg p-3 my-2">Add to Card<i className="fa fa-arrow-right"></i></button>
                                 </div>
                             </div>
 

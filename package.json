@@ -4,6 +4,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
+    "react-shimmer": "^3.2.0",
     "tabler-icons-react": "^1.56.0"
   },
   "scripts": {

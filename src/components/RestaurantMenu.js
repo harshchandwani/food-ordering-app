@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import { CDN_URL } from "../utils/constant";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
-import { Key } from "tabler-icons-react";
-import { Image, Breathing } from 'react-shimmer'
+
+import { Breathing } from 'react-shimmer'
 const RestaurantMenu = () => {
 
     // const [resInfo, setResInfo] = useState(null);
@@ -48,7 +48,9 @@ const RestaurantMenu = () => {
             {/*category accordions*/}
             {categories.map((category) => (
              <RestaurantCategory 
-                data = {category?.card?.card}/>
+                data = {category?.card?.card}
+                key={category?.card?.card?.title}    
+            />
             ))}
           </div>  
         );

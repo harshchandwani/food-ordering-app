@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const Header = () => {
     // let btnName = "Login";
     //simple variable, will not change UI
-
+    const data = useContext(UserContext);
     const [btnName, setBtnName] = useState("Login");
     const onlineStatus = useOnlineStatus();
+    
     //useState, will render
     const handleClick = () => {
         if(btnName == "Login"){
@@ -55,6 +57,9 @@ const Header = () => {
                             handleClick()
                         }}
                     >{btnName}</button>
+                    <li className="px-4">
+                        {data.loggedInUser}
+                    </li>
                 </ul>
             </div>
         </div>

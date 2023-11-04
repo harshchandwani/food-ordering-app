@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 const Header = () => {
     // let btnName = "Login";
     //simple variable, will not change UI
@@ -11,16 +12,10 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
     
     //useState, will render
-    const handleClick = () => {
-        if(btnName == "Login"){
-            setBtnName("Logout");
-        }
-        else{
-            setBtnName("Login");
-        }
-    }
-
-
+    //Selector
+    //we are subscribing to the store
+    const cartItems = useSelector((store) => store.cart.items);
+    console.log(cartItems);
     useEffect(() => {
         // console.log("Effect called")
     });
@@ -46,15 +41,15 @@ const Header = () => {
                     <li className="px-4">
                         <Link to = "/contact">Contact Us</Link>
                     </li>
-                    <li className="px-4">
-                        Cart
+                    <li className="px-4 font-bold text-xl">
+                        Cart ({cartItems.length} items) 
                     </li>
                     <button
                         className="login"
                         onClick={() => {
-                            // btnName = "Logout"
-                            // setBtnName("Logout")
-                            handleClick()
+                            btnName === "Login"
+                            ? setBtnName("Logout")
+                            : setBtnName("Login");
                         }}
                     >{btnName}</button>
                     <li className="px-4">

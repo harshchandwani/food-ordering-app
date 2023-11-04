@@ -8,6 +8,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import { useState } from "react";
+import { Provider  } from "react-redux";
+import appStore from "./utils/appStore";
 // - Header
 
 //   - Logo
@@ -43,12 +45,14 @@ const AppLayout = () => {
 
     return (
         //can we make the context provider for a particular component or not? Yes we can
-        <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
-            <div className="app">
-                <Header />
-                <Outlet />
-            </div>
-        </UserContext.Provider>
+        <Provider store = {appStore}>
+            <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
+                <div className="app">
+                    <Header />
+                    <Outlet />
+                </div>
+            </UserContext.Provider>
+        </Provider>
     )
 };
 

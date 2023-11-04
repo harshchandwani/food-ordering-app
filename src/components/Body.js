@@ -1,6 +1,5 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useContext, useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
@@ -44,7 +43,7 @@ const Body = () => {
   }
   //conditional Rendering  
   if (listOfRestaurants.length === 0) {
-    return <Shimmer />
+    // return <Shimmer />
   }
 
   const handleSearch = () => {

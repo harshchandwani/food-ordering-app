@@ -10,6 +10,7 @@ import UserContext from "./utils/UserContext";
 import { useState } from "react";
 import { Provider  } from "react-redux";
 import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 // - Header
 
 //   - Logo
@@ -79,6 +80,10 @@ const appRouter = createBrowserRouter([
                 //  what is this : -> means resId can be changed and is dynamic
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu />
+            },
+            {
+                path: "/cart",
+                element: <Cart />
             }
         ],
         errorElement: <Error />

@@ -13,8 +13,10 @@ const RestaurantMenu = () => {
     const [showIndex, setShowIndex] = useState(null);
     //we used to fectch data here, but now we have moved all the processing of fecthing the data to a hook called useRestaurantMenu, which is a custom hook!
     if (resInfo === null) {
+        return;
     }
     else {
+        // console.log(resInfo)
         const { name, cuisines, costForTwoMessage } = resInfo?.cards[0]?.card?.card?.info;
         const categories = resInfo?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
             (c) =>

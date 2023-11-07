@@ -18,7 +18,7 @@ const cartSlice = createSlice({
         removeItem: (state, action) => {
             state.items.pop();
         },
-        clearCart: (state) => {
+        clearCart: (state, action) => {
             state.items.length = 0;
         },
         /*addItems: dispatch button

@@ -18,7 +18,9 @@ const Cart = () => {
                 >
                     Clear Cart
                 </button>
-                {cartItems.length === 0 && <div><h1>Cart is Empty! Go to page</h1> <Link to= "/">Home</Link></div>}
+
+
+                {cartItems.length === 0 && <div className="p-20 text-3xl"><h1>Cart is Empty! Go to page <Link className="text-violet-700" to= "/">Home</Link> </h1> </div>}
                 <ItemList items={cartItems} />
             </div>
         </div>

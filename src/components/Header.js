@@ -1,9 +1,10 @@
 import { useEffect, useState, useContext } from "react";
-import { LOGO_URL } from "../utils/constant";
+// import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import logo from "../Images/logo.png"
 const Header = () => {
     // let btnName = "Login";
     //simple variable, will not change UI
@@ -22,9 +23,12 @@ const Header = () => {
 
     //it will be called, when component is rendered  
     return (
-        <div className="flex justify-between bg-pink-100 shadow-lg">
+        <div className="flex justify-between shadow-lg" style={{ backgroundColor: "#ffb5b5" }}>
             <div>
-                <img className="w-20" src= {LOGO_URL}></img>
+                <Link to="/">
+                    <img className="w-40" src={logo}></img>
+                </Link>
+                
             </div>
 
             <div className="flex items-center">

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import Loading from "./Loading";
 const Body = () => {
   // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestaraunt] = useState([]);
@@ -43,7 +44,7 @@ const Body = () => {
   }
   //conditional Rendering  
   if (listOfRestaurants.length === 0) {
-    // return <Shimmer />
+    return <Loading />;
   }
 
   const handleSearch = () => {

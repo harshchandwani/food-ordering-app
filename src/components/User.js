@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+
 
 const User = (props) => {
     const [info, setInfo] = useState(null);

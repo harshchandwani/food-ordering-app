@@ -24,6 +24,15 @@ We have divided the web app into 3 parts
   - Contact
 
 
+# Libraries and Dependencies Used
+- React
+- React DOM
+- Parcel
+- Redux
+- Shimmer
+- React Testing Library [Based on DOM testing Library] [already in CRA]
+
+
 
 There are 2 Types of Import/Export
 
@@ -105,3 +114,20 @@ Mounting -> Constructor  -> Render -> React updated DOM and references -> Compon
 
 
 
+# Testing [Developer]
+- Unit Testing
+- Integral Testing
+- End to End Testing (e2e Testing)
+
+
+# Setting up Testing in our app
+- Install React Testing Library
+- Installed Jest
+- Installed Babel Dependency
+- Configure the Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Jest Configuration (npx jest --init  -> Typescript (NO) -> Node/JSDOM (JSDOM))
+- Install jest-environment-jsdom 
+- Lets Write Test case
+
+[NOTE: we have installed parcel in the start of the project,and now we are setting up Babel according to us, Right? Now this will cause an error, or know conflict, and parcel will be confused]
